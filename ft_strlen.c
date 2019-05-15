@@ -11,11 +11,3 @@ int	ft_strlen(char const *str)
 	}
 	return (n);
 }
-
-int main()
-{
-	char str[] = "game";
-	printf("%d", ft_strlen(str));
-
-	return (0);
-}
