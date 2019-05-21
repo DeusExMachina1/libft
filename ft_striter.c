@@ -1,16 +1,23 @@
-#include<stdio.h>
-#include<unistd.h>
-#include<string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/21 10:05:37 by iisaacs           #+#    #+#             */
+/*   Updated: 2019/05/21 10:05:46 by iisaacs          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	int i = 0;
-	int len = strlen(s);
-	char c;
-	while	(i < len)
+	int i;
+
+	i = 0;
+	while (i < strlen(s))
 	{
-		c = s[i];
-		f(&c);
+		f(&s[i]);
 		i++;
 	}
 }
