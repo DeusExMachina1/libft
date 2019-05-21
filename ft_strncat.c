@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 08:42:40 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/21 09:25:20 by iisaacs          ###   ########.fr       */
+/*   Created: 2019/05/21 09:27:11 by iisaacs           #+#    #+#             */
+/*   Updated: 2019/05/21 09:39:17 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char const *str)
-{
-	int n;
+#include <string.h>
 
-	n = 0;
-	while (*str != '\0')
+char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (i < strlen(s1))
+		i++;
+	while (j < strlen(s2) && n > 0)
 	{
-		n++;
-		str++;
+		s1[i + j] = s2[j];
+		j++;
+		n--;
 	}
-	return (n);
+	s1[i + j + 1] = '\0';
+	return (s1);
 }
