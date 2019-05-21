@@ -1,18 +1,25 @@
-#include<stdio.h>
-#include<string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/21 14:15:47 by iisaacs           #+#    #+#             */
+/*   Updated: 2019/05/21 14:18:07 by iisaacs          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int i = strlen(s);
-	while	(i >= 0)
-	{
-		if	(s[i--] == c)
-			return ((char *)&s[i-2]);
-	}
-}
+	int i;
 
-int		main(void)
-{
-	printf("%s", ft_strrchr("sitring", 'i'));
-	return (0);
+	i = strlen(s) - 1;
+	while (i >= 0)
+	{
+		if (s[i--] == c)
+			return ((char *)&s[i - 1]);
+	}
 }

@@ -1,40 +1,40 @@
-#include<string.h>
-#include<stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/21 13:47:46 by iisaacs           #+#    #+#             */
+/*   Updated: 2019/05/21 15:39:19 by iisaacs          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char *new_p;
+	int i;
+	int j;
 
-	while	((*haystack != '\0') && (len > 0))     //Iterate through 'haystack'
+	i = -1;
+	j = 0;
+	while (haystack[++i] && len > 0)
 	{
-		if	(*haystack == *needle)  //If haystack[x] == needle[x], init 'new_p' to haystack[x]
+		if (haystack[i] == needle[j])
 		{
-			new_p = (char *)haystack;
-			printf("here initializing new_p\n");
-			while	((*haystack != '\0') && (len > 0))	//continue iterating through 'haystack' checking if entire 'needle' in 'haystack'.
+			while (haystack[i] && len > 0 && needle != '\0')
 			{
-				printf("here in second while loop\n");
-				if	(*needle != *haystack)  //If not, init 'needle' to address of needle[0], then break, and continue iterating 'haystack'.
-				{
-					needle = &needle[0];
-					break;
-				}
-				haystack++;
-				needle++;
+				if (haystack[i] != needle[j])
+					break ;
+				i++;
+				j++;
 				len--;
-				if	(*needle == '\0') //Once 'needle' hits null character (entire 'needle' is in 'haystack') return 'new_p'.
-					return	(new_p);
 			}
+			if (needle[j] == '\0')
+				return ((char *)&haystack[i - j]);
+			else
+				j = 0;
 		}
-		haystack++;
 		len--;
 	}
-	return	(NULL);  //return NULL if haystack[x] == '\0' and if 'needle' is not found in 'haystack'.
-}
-
-int		main(void)
-{
-	//ft_strnstr("staystring", "tr", 7);
-	printf("%s", ft_strnstr("staystring", "r", 7));
-	return (0);
+	return (NULL);
 }
