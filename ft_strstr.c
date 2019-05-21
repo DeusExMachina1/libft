@@ -1,42 +1,42 @@
-#include<stdio.h>
-#include<string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/21 09:40:49 by iisaacs           #+#    #+#             */
+/*   Updated: 2019/05/21 09:43:54 by iisaacs          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	*ft_strstr(const char* haystack, const char* needle)
+#include <string.h>
+
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	const char	*new_p;
-	const char	*first_letter = needle; 
-	const char	*hay = haystack;
+	const char *new_p;
 
-	if	(*haystack == '\0')
+	if (*haystack == '\0')
 		return (NULL);
-	while	(*haystack != '\0')
+	while (*haystack != '\0')
 	{
-		if	(*haystack == *needle)
+		if (*haystack == *needle)
 		{
 			new_p = haystack;
-			while	(*haystack != '\0')
+			while (*haystack != '\0')
 			{
-				if	(*haystack != *needle)
+				if (*haystack != *needle)
 				{
-					needle = first_letter;
-					break;
+					needle = &needle[0];
+					break ;
 				}
 				needle++;
 				haystack++;
-				if	(*needle == '\0')
-					return	((char *)new_p);
+				if (*needle == '\0')
+					return ((char *)new_p);
 			}
 		}
 		haystack++;
 	}
-	return	(NULL);
-}
-
-int		main(void)
-{
-	char hay[] = "Soundsd";
-	char needle[] = "sd";
-
-	printf("%s", strstr(hay, needle));
-	return (0);
+	return (NULL);
 }
