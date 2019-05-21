@@ -1,17 +1,29 @@
-#include<string.h>
-#include<stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/21 08:38:49 by iisaacs           #+#    #+#             */
+/*   Updated: 2019/05/21 08:41:44 by iisaacs          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <string.h>
 
 void	*ft_strchr(const char *str, int c)
 {
-	if	(c == '\0')
+	int len;
+
+	len = strlen(str);
+	while (len > 0)
 	{
-		str = str + ft_strlen(str);
-		return (str);
-	}
-	while	(!(*str))
-	{
-		if	(c == *str)
-			return (str);
+		printf("%d\n", len);
+		if ((char)c == *str)
+			return ((void *)str);
 		str++;
+		len--;
 	}
+	return (NULL);
 }
