@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 07:41:24 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/22 07:52:58 by iisaacs          ###   ########.fr       */
+/*   Created: 2019/05/22 08:10:15 by iisaacs           #+#    #+#             */
+/*   Updated: 2019/05/22 08:36:55 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
-
-void	ft_bzero(void *s, size_t n)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	memset(s, 0, n);
+	char *n_dst;
+	char *n_src;
+
+	n_dst = (char *)dst;
+	n_src = (char *)src;
+	while (n > 0)
+	{
+		*n_dst = *n_src;
+		n_dst++;
+		n_src++;
+		n--;
+	}
+	return (&dst[0]);
 }
