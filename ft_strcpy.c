@@ -6,22 +6,22 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 11:19:58 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/23 10:44:31 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 12:50:51 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {
 	int i;
 
 	i = 0;
-	while (*src != '\0')
+	while (src[i] != '\0')
 	{
-		dst[i] = *src;
-		src++;
+		dst[i] = src[i];
 		i++;
 	}
-	i++;
 	dst[i] = '\0';
-	return (&dst[0]);
+	return (dst);
 }

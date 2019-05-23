@@ -6,9 +6,11 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 09:54:54 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/23 11:06:23 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 11:32:38 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putendl_fd(char const *s, int fd)
 {

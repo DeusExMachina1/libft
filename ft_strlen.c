@@ -6,11 +6,13 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 08:42:40 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/23 10:43:56 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 12:56:55 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char const *str)
+#include "libft.h"
+
+size_t	ft_strlen(char const *str)
 {
 	int n;
 
