@@ -6,7 +6,7 @@
 #    By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 07:38:21 by iisaacs           #+#    #+#              #
-#    Updated: 2019/05/23 08:54:08 by iisaacs          ###   ########.fr        #
+#    Updated: 2019/05/23 17:45:57 by iisaacs          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,15 +65,18 @@ SRC = ft_memset.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c
 
-all:
-	gcc -c *.c
-	ar rc $(NAME) *.o
+OBJ = $(SRC:%.c=%.o)
+
+all: $(NAME)
+
+$(NAME): 
+	@gcc -c -Wall -Werror -Wextra *.c
+	@ar rc $(NAME) *.o
 
 clean:
-	rm -f *.o
+	@/bin/rm -f *.o
 
 fclean: clean
-	rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
-

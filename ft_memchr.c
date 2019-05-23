@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 13:13:19 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/23 11:12:36 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 17:44:12 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	int		i;
 	char	*new_s;
 
+	i = 0;
 	chr = (unsigned char)c;
 	new_s = (char *)s;
 	while (n > 0)

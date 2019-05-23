@@ -6,16 +6,13 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 09:46:59 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/23 11:04:05 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 17:36:33 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	int upper_c;
-
-	upper_c = c;
-	if (c >= 'a' && c <= 'z')
-		upper_c = c - 32;
-	return (upper_c);
+	if (c >= 97 && c <= 122)
+		c -= 32;
+	return (c);
 }

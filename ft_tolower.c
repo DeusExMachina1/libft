@@ -6,16 +6,13 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 09:46:06 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/23 11:04:22 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 17:36:57 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	int lower_c;
-
-	lower_c = c;
 	if (c >= 'A' && c <= 'Z')
-		lower_c += 32;
-	return (lower_c);
+		c += 32;
+	return (c);
 }

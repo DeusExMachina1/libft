@@ -6,13 +6,13 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 07:54:37 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/23 11:03:37 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 17:17:19 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 127)
+	if ((unsigned char)c >= 32 && (unsigned char)c <= 126)
 		return (1);
 	return (0);
 }

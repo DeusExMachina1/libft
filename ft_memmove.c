@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 12:41:53 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/23 10:43:16 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 17:44:51 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	n_src = (char *)src;
 	temp = (char *)malloc(sizeof(src) + 1);
 	i = -1;
-	while (++i < len)
+	while (++i < (int)len)
 		temp[i] = n_src[i];
 	while (len > 0)
 	{
