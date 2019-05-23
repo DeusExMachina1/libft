@@ -6,9 +6,11 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:47:46 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/21 15:39:19 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 10:47:58 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

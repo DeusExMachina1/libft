@@ -6,13 +6,13 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 07:41:24 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/22 07:52:58 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 10:39:26 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	memset(s, 0, n);
+	ft_memset(s, 0, n);
 }

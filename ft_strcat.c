@@ -6,22 +6,20 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 09:22:20 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/21 09:23:44 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 10:45:01 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {
 	int i;
 	int j;
 
-	i = 0;
+	i = ft_strlen(s1);
 	j = 0;
-	while (i < strlen(s1))
-		i++;
-	while (j < strlen(s2))
+	while (j < ft_strlen(s2))
 	{
 		s1[i + j] = s2[j];
 		j++;

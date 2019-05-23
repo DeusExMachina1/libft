@@ -6,11 +6,11 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 09:27:11 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/21 09:39:17 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 10:45:25 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 {

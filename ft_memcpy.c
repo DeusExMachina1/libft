@@ -6,9 +6,11 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 08:10:15 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/22 08:38:10 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 10:42:23 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {

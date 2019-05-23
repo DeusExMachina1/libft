@@ -6,11 +6,9 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 09:53:57 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/21 09:54:34 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 11:05:34 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 void	ft_putendl(char const *s)
 {

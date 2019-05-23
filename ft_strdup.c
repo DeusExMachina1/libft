@@ -6,12 +6,11 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 10:34:01 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/22 10:34:42 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 10:44:24 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_strdup(const char *s1)
 {

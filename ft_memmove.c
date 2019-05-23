@@ -6,12 +6,11 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 12:41:53 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/22 12:43:10 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 10:43:16 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

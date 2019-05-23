@@ -6,16 +6,20 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:05:37 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/21 10:05:46 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 11:04:51 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_striter(char *s, void (*f)(char *))
 {
 	int i;
+	int len;
 
 	i = 0;
-	while (i < strlen(s))
+	len = ft_strlen(s);
+	while (i < len)
 	{
 		f(&s[i]);
 		i++;

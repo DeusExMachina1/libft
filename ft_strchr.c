@@ -6,20 +6,19 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 08:38:49 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/21 14:10:54 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 10:47:13 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_strchr(const char *str, int c)
 {
 	int len;
 
-	len = strlen(str);
+	len = ft_strlen(str);
 	while (len > 0)
 	{
-		printf("%d\n", len);
 		if ((char)c == *str)
 			return ((void *)str);
 		str++;

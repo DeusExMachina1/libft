@@ -6,11 +6,9 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 07:56:05 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/21 09:57:26 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 11:06:08 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include<unistd.h>
 
 void	ft_putstr_fd(char const *s, int fd)
 {

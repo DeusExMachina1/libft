@@ -6,20 +6,28 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 13:13:19 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/22 13:58:40 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/23 10:43:32 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-void	*memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
+	char chr;
+	int i;
+	char *new_s;
+
+	chr = (unsigned char)c;
+	new_s = (char *)s;
 	while (n > 0)
 	{
-		if ((unsigned char)c == *s)
-			return ((void *)s);
-		s++;
+		if (new_s[i] == chr)
+			return ((void *)&s[i]);
+		i++;
 		n--;
 	}
 	return (NULL);
 }
+
+
