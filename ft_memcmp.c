@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 09:19:38 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/24 14:34:41 by iisaacs          ###   ########.fr       */
+/*   Created: 2019/05/24 14:02:49 by iisaacs           #+#    #+#             */
+/*   Updated: 2019/05/24 14:21:47 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	unsigned int result;
+#include "libft.h"
 
-	while ((*s1 != '\0') || (*s2 != '\0'))
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	unsigned int	result;
+	int				i;
+	unsigned char	*new_s1;
+	unsigned char	*new_s2;
+
+	new_s1 = (unsigned char *)s1;
+	new_s2 = (unsigned char *)s2;
+	i = 0;
+	while (n > 0)
 	{
-		if (*s1 != *s2)
+		if (new_s1[i] != new_s2[i])
 		{
-			result = (unsigned char)*s1 - (unsigned char)*s2;
+			result = new_s1[i] - new_s2[i];
 			return (result);
 		}
-		s1++;
-		s2++;
+		i++;
+		n--;
 	}
 	return (0);
 }
