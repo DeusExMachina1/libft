@@ -6,13 +6,13 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 09:56:51 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/23 10:42:46 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/24 08:07:15 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,
+void	*ft_memccpy(void *dst, const void *src, int c,
 		size_t n)
 {
 	int		i;
@@ -28,8 +28,9 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,
 		i++;
 		n--;
 	}
+	n_dst[i] = n_src[i];
 	if (n == 0)
 		return (NULL);
 	i++;
-	return (&n_dst[i]);
+	return ((void *)&n_dst[i]);
 }

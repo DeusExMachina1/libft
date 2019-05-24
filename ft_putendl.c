@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 09:53:57 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/23 11:31:50 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/24 11:03:28 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 void	ft_putendl(char const *s)
 {
-	while (*s != '\0')
+	int len;
+
+	len = (int)ft_strlen(s);
+	while (len > 0)
+	{
 		write(1, s, 1);
+		len--;
+		s++;
+	}
 	write(1, "\n", 1);
 }

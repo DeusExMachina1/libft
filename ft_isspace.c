@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 14:47:02 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/24 07:33:14 by iisaacs          ###   ########.fr       */
+/*   Created: 2019/05/24 10:36:49 by iisaacs           #+#    #+#             */
+/*   Updated: 2019/05/24 10:46:37 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memset(void *b, int c, size_t len)
+int	ft_isspace(int c)
 {
-	char	*str;
-	int		i;
-
-	i = 0;
-	str = (char *)b;
-	while (i < (int)ft_strlen(b) && (len-- > 0))
-	{
-		str[i] = (unsigned char)c;
-		i++;
-	}
-	return (b);
+	c = (unsigned char)c;
+	if (c == '\n' || c == '\t' || c == '\v' || c == '\r'
+		|| c == '\f' || c == ' ')
+		return (1);
+	return (0);
 }

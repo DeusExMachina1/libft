@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 14:47:02 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/24 07:33:14 by iisaacs          ###   ########.fr       */
+/*   Created: 2019/05/24 11:06:30 by iisaacs           #+#    #+#             */
+/*   Updated: 2019/05/24 12:00:05 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_putnbr(int n)
 {
-	char	*str;
-	int		i;
+	int	i;
+	char d;
 
 	i = 0;
-	str = (char *)b;
-	while (i < (int)ft_strlen(b) && (len-- > 0))
+	if (n != 1)
 	{
-		str[i] = (unsigned char)c;
-		i++;
+		d = (n % 10) + 48;
+		n = n / 10;
 	}
-	return (b);
+	if (n >= 10)
+		ft_putnbr(n);
+	write(1, &d, 1);
+}
+
+int		main(void)
+{
+	int num = 11234;
+	ft_putnbr(num);
+	return (0);
 }

@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 14:47:02 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/24 07:33:14 by iisaacs          ###   ########.fr       */
+/*   Created: 2019/05/24 08:11:39 by iisaacs           #+#    #+#             */
+/*   Updated: 2019/05/24 10:58:01 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int		ft_atoi(const char *str)
 {
-	char	*str;
-	int		i;
+	int	n;
+	int	i;
+	int is_neg;
 
+	n = 0;
 	i = 0;
-	str = (char *)b;
-	while (i < (int)ft_strlen(b) && (len-- > 0))
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '+')
+		i++;
+	else if (str[i] == '-')
 	{
-		str[i] = (unsigned char)c;
+		i++;
+		is_neg = 1;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		n = n * 10 + (str[i] - '0');
 		i++;
 	}
-	return (b);
+	if (is_neg)
+		n *= -1;
+	return (n);
 }
