@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 11:19:58 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/29 15:18:08 by iisaacs          ###   ########.fr       */
+/*   Created: 2019/05/29 11:07:04 by iisaacs           #+#    #+#             */
+/*   Updated: 2019/05/29 11:12:56 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+char	*ft_strnew(size_t size)
 {
-	int i;
+	char	*str;
+	int		i;
 
 	i = 0;
-	while (src[i] != '\0')
+	str = (char *)malloc(size + 1);
+	if (!str)
+		return (NULL);
+	while (i < (int)size)
 	{
-		dst[i] = src[i];
+		str[i] = '\0';
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	str[i] = '\0';
+	return (str);
 }

@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 11:19:58 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/29 15:18:08 by iisaacs          ###   ########.fr       */
+/*   Created: 2019/05/29 09:38:29 by iisaacs           #+#    #+#             */
+/*   Updated: 2019/05/29 10:21:58 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+void	*ft_memalloc(size_t size)
 {
-	int i;
+	void	*new_mem;
+	int		i;
 
+	new_mem = malloc(size);
 	i = 0;
-	while (src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	if (new_mem == '\0')
+		return (NULL);
+	return (memset(new_mem, 0, size));
 }
