@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 11:06:30 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/29 14:46:47 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/31 10:30:09 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,15 @@
 
 void	ft_putnbr(int n)
 {
-	int		i;
-	int		k;
-	char	d;
+	char d;
 
-	i = 0;
-	k = 1;
-	if (n != 1)
+	if (n >= 9)
 	{
 		d = (n % 10) + 48;
 		n = n / 10;
-	}
-	if (n >= 10)
 		ft_putnbr(n);
+	}
+	else
+		d = n + 48;
 	write(1, &d, 1);
-}
-
-int		main(void)
-{
-	int num = 11234;
-	ft_putnbr(num);
-	return (0);
 }

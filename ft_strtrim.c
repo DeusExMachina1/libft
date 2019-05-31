@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 09:05:25 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/30 14:36:00 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/05/31 11:37:11 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ char	*ft_strtrim(char const *s)
 	char	*new_str;
 
 	i = 0;
-	first = 0;
-	last = 0;
 	while (ft_isspace(s[i]))
 		i++;
 	first = i;
-	if ((i + 1) == ft_strlen(s))
+	if (i == (int)ft_strlen(s))
+		return ("");
+	if ((i + 1) == (int)ft_strlen(s))
 		return (NULL);
 	i = ft_strlen(s) - 1;
 	while (ft_isspace(s[i]))
