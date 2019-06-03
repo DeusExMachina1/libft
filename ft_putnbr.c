@@ -6,23 +6,25 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 11:06:30 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/31 10:30:09 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/03 10:12:27 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void	ft_putnbr(int old_n)
 {
-	char d;
+	char			d;
+	unsigned int	n;
 
-	if (n >= 9)
+	if (old_n < 0)
 	{
-		d = (n % 10) + 48;
-		n = n / 10;
-		ft_putnbr(n);
+		old_n *= -1;
+		write(1, "-", 1);
 	}
-	else
-		d = n + 48;
+	n = old_n;
+	if (n >= 10)
+		ft_putnbr(n / 10);
+	d = (n % 10) + '0';
 	write(1, &d, 1);
 }

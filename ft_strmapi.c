@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 09:55:21 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/31 09:59:57 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/03 10:13:13 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	new_str = (char *)malloc(ft_strlen(s) + 1);
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		new_str[i] = f(i, s[i]);
 		i++;

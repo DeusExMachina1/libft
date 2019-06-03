@@ -6,12 +6,11 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 14:57:40 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/30 08:27:33 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/03 08:12:03 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strsub(const char *s, unsigned int start, size_t len)
 {
@@ -19,17 +18,10 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 	char	*new_str;
 
 	i = 0;
-	new_str = (char *)malloc(len);
+	new_str = (char *)malloc(len + 1);
 	if (!new_str)
 		return (NULL);
 	ft_strncpy(new_str, &s[start], len);
+	new_str[len] = '\0';
 	return (new_str);
 }
-
-/*int		main(void)
-{
-	char *s = "STRING ";
-	char *ns = "CONCATED";
-	printf("%s", ft
-	return (0);
-}*/
