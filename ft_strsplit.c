@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:22:31 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/06/07 10:16:12 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/07 17:18:13 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,13 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	j = 0;
 	num = word_counter(s, c);
-	words = (char **)malloc(word_counter(s, c) + 1);
+	if (!(words = (char **)malloc(word_counter(s, c) + 1)))
+		return (NULL);
 	while (i < num)
 	{
 		len = length_counter(s, c, &j, &begin);
-		*(words + i) = (char *)malloc(len + 1);
+		if(!(*(words + i) = (char *)malloc(len + 1)))
+			return (NULL);
 		*(words + i) = ft_strsub(s, begin, len);
 		i++;
 	}
@@ -91,8 +93,9 @@ char	**ft_strsplit(char const *s, char c)
 	return (words);
 }
 
-/*int		main()
+int		main()
 {
-	ft_strsplit("**fuck**off**world**", '*');
+	ft_strsplit("**fuck***off**world***you**gave*me*nothing******world****fuck*offfff****", '*');
+
 	return (0);
-}*/
+}
