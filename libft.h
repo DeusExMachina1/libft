@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 09:02:02 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/29 15:15:07 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/07 10:15:36 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
@@ -33,23 +40,23 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
 void	ft_putendl(char const *s);
-//void	ft_putnbr(int n);
-//void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr(int n);
+void	ft_putnbr_fd(int c, int fd);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
 void	ft_strdel(char	**as);
-//void	ft_strclr(char *s);
-//void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-//char	*ft_strmap(char const *s, char (*f)(char));
-//char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_strclr(char *s);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t len);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
-//char	*ft_strjoin(char const *s1, char const *s2);
-//char	*ft_strtrim(char const *s);
-//char	**ft_strsplit(char const *s, char c);
-//char	*ft_itoa(int n);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s);
+char	**ft_strsplit(char const *s, char c);
+char	*ft_itoa(int n);
 void	ft_putchar_fd(int c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
@@ -73,4 +80,13 @@ void	ft_bzero(void *s, size_t n);
 
 void	ft_striter(char *s, void (*f)(char *));
 int		ft_atoi(const char *str);
+
+t_list	*ft_lstnew(void const *content, size_t content_size);
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstadd(t_list **alst, t_list *n);
+void	ft_lstiter(t_list *ls, void (*f)(t_list *elem));
+t_list *ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+
 #endif
