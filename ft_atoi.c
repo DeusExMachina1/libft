@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 08:11:39 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/24 10:58:01 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/12 14:52:08 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 int		ft_atoi(const char *str)
 {
-	int	n;
-	int	i;
-	int is_neg;
+	long int	n;
+	int			i;
+	int			is_neg;
 
 	n = 0;
 	i = 0;
+	is_neg = 0;
 	while (ft_isspace(str[i]))
 		i++;
 	if (str[i] == '+')

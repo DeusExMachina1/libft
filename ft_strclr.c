@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 10:14:06 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/06/03 10:20:20 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/14 10:15:41 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_strclr(char *s)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return ;
 	len = ft_strlen(s);
 	while (len > 0)
 	{

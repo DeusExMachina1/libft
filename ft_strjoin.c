@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 08:29:03 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/31 11:19:36 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/14 10:35:46 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	ns_len = ft_strlen(s1) + ft_strlen(s2);
 	new_str = (char *)malloc(ns_len + 1);
 	if (!new_str)

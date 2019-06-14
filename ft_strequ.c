@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 14:47:15 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/29 14:51:34 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/14 10:34:04 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	ft_strequ(const char *s1, const char *s2)
 {
+	if (!s1 || !s2)
+		return (0);
 	if (ft_strcmp(s1, s2) == 0)
 		return (1);
 	return (0);

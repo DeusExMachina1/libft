@@ -6,37 +6,54 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:47:46 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/23 16:39:25 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/14 13:31:27 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int	g_found;
+
+static void	found_funct(int *hay_i, int *t_len, size_t *len, int n)
 {
-	int hay_len;
-	int hay_i;
-	int n_i;
-	int n_len;
+
+	if (n == 0 && g_found == -1)
+	{
+		g_found = *hay_i;
+		*t_len = *len;
+	}
+	else if (n == 1 && g_found != -1)
+	{
+		*hay_i = g_found + 1;
+		g_found = -1;
+		*len = *t_len;
+	}
+}
+
+char		*ft_strnstr(const char *hay, const char *ndl, size_t len)
+{
+	int	hay_i;
+	int	n_i;
+	int	t_len;
 
 	hay_i = -1;
 	n_i = 0;
-	hay_len = (int)ft_strlen(haystack);
-	n_len = (int)ft_strlen(needle);
-	if (!needle[n_i])
-		return ((char *)haystack);
-	while (++hay_i < hay_len && len > 0)
+	g_found = -1;
+	if (ft_strlen(ndl) == 0)
+		return ((char *)hay);
+	while (hay[++hay_i] && len > 0)
 	{
-		len--;
-		while (haystack[hay_i] == needle[n_i] && len > 0)
+		while (hay[hay_i] == ndl[n_i] && len > 0)
 		{
+			found_funct(&hay_i, &t_len, &len, 0);
 			hay_i++;
-			n_i++;
 			len--;
-			if (n_i == n_len)
-				return ((char *)&haystack[hay_i - n_i]);
+			if (!ndl[++n_i])
+				return ((char *)&hay[g_found]);
 		}
+		found_funct(&hay_i, &t_len, &len, 1);
 		n_i = 0;
+		len--;
 	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 08:37:22 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/06/10 15:26:02 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/12 10:59:47 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ char		*ft_itoa(int n)
 
 	temp_n = n;
 	mem_size = num_alloc(n);
-	res = (char *)malloc(mem_size + 1);
+	if (!(res = (char *)malloc(mem_size + 1)))
+			return (NULL);
 	i = mem_size - 1;
 	if (is_neg(temp_n))
 		n *= -1;

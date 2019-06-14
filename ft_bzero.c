@@ -6,7 +6,7 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 07:41:24 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/05/30 08:48:57 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/11 16:37:03 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,11 @@ void	ft_bzero(void *s, size_t n)
 {
 	char	*str;
 	int		i;
-	int		len;
 
-	i = 0;
+	i = -1;
 	str = (char *)s;
-	len = (int)ft_strlen(s);
-	while (i < len && n-- > 0)
-	{
+	if (n == 0)
+		return ;
+	while (++i < (int)n)
 		str[i] = 0;
-		i++;
-	}
 }

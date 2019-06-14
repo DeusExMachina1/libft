@@ -6,13 +6,13 @@
 /*   By: iisaacs <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:22:31 by iisaacs           #+#    #+#             */
-/*   Updated: 2019/06/10 09:24:02 by iisaacs          ###   ########.fr       */
+/*   Updated: 2019/06/14 10:20:30 by iisaacs          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_counter(char const *s, char c)
+static int	word_count(char const *s, char c)
 {
 	int i;
 	int	count;
@@ -42,10 +42,10 @@ static int	length_counter(char const *s, char c, int *i, int *begin)
 	int len;
 
 	len = 0;
-	while (*(s + *i) == c && *(s + *i))
+	while (s[*i] == c && s[*i])
 		*i += 1;
 	*begin = *i;
-	while (*(s + *i) != c && *(s + *i))
+	while (s[*i] != c && s[*i])
 	{
 		len++;
 		*i += 1;
@@ -63,8 +63,10 @@ char		**ft_strsplit(char const *s, char c)
 
 	i[0] = 0;
 	i[1] = 0;
-	num = word_counter(s, c);
-	if (!(words = (char **)malloc(word_counter(s, c) + 1)))
+	if (!s)
+		return (NULL);
+	num = word_count(s, c);
+	if (!(words = (char **)malloc(sizeof(char **) * word_count(s, c) + 1)))
 		return (NULL);
 	while (i[0] < num)
 	{
